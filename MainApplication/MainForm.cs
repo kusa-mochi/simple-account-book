@@ -47,6 +47,8 @@ namespace MainApplication
             // DBから初期設定情報を読み込む。
             _settings = _dataManager.GetMainFormSettings();
 
+            this.SetYearControlValueWithoutEventHandler();
+
             // 表示月を変えるとコンボボックスの値を変えたことによるイベントが発生し，イベントハンドラが実行される。
             // イベントハンドラの処理により，表示月の家計簿データがDBから読み込まれる。
             this.comboBox_Month.SelectedIndex = _settings.month.Month - 1;
@@ -118,7 +120,7 @@ namespace MainApplication
             this.SetButtonEventHandlers();
         }
 
-        private void SetMonthControlValueWithoutEventHandler()
+        private void SetYearControlValueWithoutEventHandler()
         {
             this.numericUpDown_Year.ValueChanged -= new EventHandler(this.numericUpDown_Year_ValueChanged);
             this.numericUpDown_Year.Value = _settings.month.Year;
