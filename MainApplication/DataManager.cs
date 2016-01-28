@@ -469,22 +469,22 @@ namespace MainApplication
 
             // リストボックスで選択された文字列を，金額データと説明文とに分ける。
             string[] splittedSelectedStrings = selectedString.Split(_applicationSettings.commentSplitCharacter);
-            string selectedAmount = null;
+            int selectedAmount = -1;
             string selectedComment = null;
             switch (splittedSelectedStrings.Length)
             {
                 case 1:
-                    selectedAmount = splittedSelectedStrings[0];
+                    selectedAmount = this.AmountString2Int(splittedSelectedStrings[0]);
                     break;
                 case 2:
-                    selectedAmount = splittedSelectedStrings[0];
+                    selectedAmount = this.AmountString2Int(splittedSelectedStrings[0]);
                     selectedComment = splittedSelectedStrings[1];
                     break;
                 default:
                     throw new InvalidDataException("selectedString");
             }
 
-            if (selectedAmount == null)
+            if (selectedAmount == -1)
             {
                 throw new InvalidDataException("selectedString");
             }
@@ -497,7 +497,7 @@ namespace MainApplication
             _command.CommandText += "where ";
             _command.CommandText += "年月='" + month.ToString("yyyy/MM") + "' and ";
             _command.CommandText += "費用項目ID=" + (kindOfAmountID + 1) + " and ";
-            _command.CommandText += "金額=" + selectedAmount;
+            _command.CommandText += "金額=" + selectedAmount.ToString();
             if (selectedComment != null)
             {
                 _command.CommandText += " and 説明='" + selectedComment + "'";
@@ -575,10 +575,10 @@ namespace MainApplication
             switch (splittedStrings.Length)
             {
                 case 1:
-                    amount = this.String2Int(splittedStrings[0]);
+                    amount = this.AmountString2Int(splittedStrings[0]);
                     break;
                 case 2:
-                    amount = this.String2Int(splittedStrings[0]);
+                    amount = this.AmountString2Int(splittedStrings[0]);
                     comment = splittedStrings[1];
                     break;
                 default:
@@ -713,7 +713,7 @@ namespace MainApplication
             _command.ExecuteNonQuery();
         }
 
-        private int String2Int(string s)
+        private int AmountString2Int(string s)
         {
             if (string.IsNullOrEmpty(s) == true)
             {
