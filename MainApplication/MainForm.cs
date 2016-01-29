@@ -619,7 +619,23 @@ namespace MainApplication
             this.textBox_EditAmount.BringToFront();
 
             // 現在登録されている金額をテキストボックスに表示する。
-            this.textBox_EditAmount.Text = (string)this.listBox_AmountsDetail.SelectedItem;
+            int amount = -1;
+            string comment = "";
+            string[] splittedString = ((string)this.listBox_AmountsDetail.SelectedItem).Split(_settings.commentSplitCharacter);
+            switch (splittedString.Length)
+            {
+                case 1:
+                    amount = _dataManager.AmountString2Int(splittedString[0]);
+                    break;
+                case 2:
+                    amount = _dataManager.AmountString2Int(splittedString[0]);
+                    comment = splittedString[1];
+                    break;
+                default:
+                    throw new Exception("登録されている金額情報の形式が不正です。");
+            }
+
+            this.textBox_EditAmount.Text = amount.ToString() + _settings.commentSplitCharacter.ToString() + comment;
 
             this.textBox_EditAmount.Visible = true;
 
