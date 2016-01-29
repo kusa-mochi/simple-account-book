@@ -663,6 +663,30 @@ namespace MainApplication
             }
         }
 
+        public int AmountString2Int(string s)
+        {
+            if (string.IsNullOrEmpty(s) == true)
+            {
+                throw new ArgumentNullException("s");
+            }
+
+            int output = -1;
+
+            IFormatProvider provider = CultureInfo.CreateSpecificCulture("en-US");
+            if (Int32.TryParse(
+                    s,
+                    NumberStyles.Integer | NumberStyles.AllowThousands,
+                    provider,
+                    out output
+                    ) == false
+                )
+            {
+                throw new ArgumentException("s");
+            }
+
+            return output;
+        }
+
         #endregion
 
         #region プライベートメソッド
@@ -711,30 +735,6 @@ namespace MainApplication
             _command.CommandText = "insert into アプリ設定 (設定項目,設定値) values ";
             _command.CommandText += "('金額の区切り文字','+'),('コメントの区切り文字',':')";
             _command.ExecuteNonQuery();
-        }
-
-        private int AmountString2Int(string s)
-        {
-            if (string.IsNullOrEmpty(s) == true)
-            {
-                throw new ArgumentNullException("s");
-            }
-
-            int output = -1;
-
-            IFormatProvider provider = CultureInfo.CreateSpecificCulture("en-US");
-            if (Int32.TryParse(
-                    s,
-                    NumberStyles.Integer | NumberStyles.AllowThousands,
-                    provider,
-                    out output
-                    ) == false
-                )
-            {
-                throw new ArgumentException("s");
-            }
-
-            return output;
         }
 
         #endregion
