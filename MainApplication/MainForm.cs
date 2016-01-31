@@ -969,5 +969,10 @@ namespace MainApplication
             // メイン画面設定をDBに保存する。
             _dataManager.SetMainFormSettings(_settings);
         }
+
+        private void listBox_AmountsDetail_Click(object sender, EventArgs e)
+        {
+            this.textBox_EditAmount.Visible = false;
+        }
     }
 }
