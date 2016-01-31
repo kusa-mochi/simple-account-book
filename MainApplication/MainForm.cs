@@ -527,12 +527,17 @@ namespace MainApplication
             this.listBox_AmountsDetail.Items.Clear();
             this.listBox_AmountsDetail.Height = 4;
 
+            // 金額データをリストボックスに追加する。
             this.AddAmountToListbox(data);
 
             // リストボックスの位置を調整する。
-            if (this.listBox_AmountsDetail.Top + this.listBox_AmountsDetail.Height > this.Height)
+            if (this.listBox_AmountsDetail.Top + (this.listBox_AmountsDetail.Items.Count * 18) > this.Height)
             {
-                this.listBox_AmountsDetail.Top = this.Height - this.listBox_AmountsDetail.Height - 50;
+                this.listBox_AmountsDetail.Top = this.Height - (this.listBox_AmountsDetail.Items.Count * 18) - 50;
+            }
+            if(this.listBox_AmountsDetail.Left + this.listBox_AmountsDetail.Width > this.Width - 30)
+            {
+                this.listBox_AmountsDetail.Left = this.Width - this.listBox_AmountsDetail.Width - 30;
             }
 
             // 登録された金額の一覧を表示する。
