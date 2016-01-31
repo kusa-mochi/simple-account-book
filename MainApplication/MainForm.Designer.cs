@@ -326,6 +326,7 @@
             this.listBox_AmountsDetail.Size = new System.Drawing.Size(141, 58);
             this.listBox_AmountsDetail.TabIndex = 42;
             this.listBox_AmountsDetail.Visible = false;
+            this.listBox_AmountsDetail.Click += new System.EventHandler(this.listBox_AmountsDetail_Click);
             this.listBox_AmountsDetail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBox_AmountsDetail_MouseUp);
             // 
             // contextMenuStrip_AmountsDetail
@@ -335,19 +336,19 @@
             this.ToolStripMenuItem_AmountsDetail_Edit,
             this.ToolStripMenuItem_AmountsDetail_Remove});
             this.contextMenuStrip_AmountsDetail.Name = "contextMenuStrip_AmountsDetail";
-            this.contextMenuStrip_AmountsDetail.Size = new System.Drawing.Size(117, 60);
+            this.contextMenuStrip_AmountsDetail.Size = new System.Drawing.Size(130, 64);
             // 
             // ToolStripMenuItem_AmountsDetail_Edit
             // 
             this.ToolStripMenuItem_AmountsDetail_Edit.Name = "ToolStripMenuItem_AmountsDetail_Edit";
-            this.ToolStripMenuItem_AmountsDetail_Edit.Size = new System.Drawing.Size(116, 28);
+            this.ToolStripMenuItem_AmountsDetail_Edit.Size = new System.Drawing.Size(129, 30);
             this.ToolStripMenuItem_AmountsDetail_Edit.Text = "編集";
             this.ToolStripMenuItem_AmountsDetail_Edit.Click += new System.EventHandler(this.ToolStripMenuItem_AmountsDetail_Edit_Click);
             // 
             // ToolStripMenuItem_AmountsDetail_Remove
             // 
             this.ToolStripMenuItem_AmountsDetail_Remove.Name = "ToolStripMenuItem_AmountsDetail_Remove";
-            this.ToolStripMenuItem_AmountsDetail_Remove.Size = new System.Drawing.Size(116, 28);
+            this.ToolStripMenuItem_AmountsDetail_Remove.Size = new System.Drawing.Size(129, 30);
             this.ToolStripMenuItem_AmountsDetail_Remove.Text = "削除";
             this.ToolStripMenuItem_AmountsDetail_Remove.Click += new System.EventHandler(this.ToolStripMenuItem_AmountsDetail_Remove_Click);
             // 
@@ -1005,26 +1006,26 @@
             this.ToolStripMenuItem_ItemSetting_SetName,
             this.ToolStripMenuItem_ItemSetting_Remove});
             this.contextMenuStrip_ItemSetting.Name = "contextMenuStrip_ItemSetting";
-            this.contextMenuStrip_ItemSetting.Size = new System.Drawing.Size(204, 88);
+            this.contextMenuStrip_ItemSetting.Size = new System.Drawing.Size(217, 94);
             // 
             // ToolStripMenuItem_ItemSetting_SetTargetAmount
             // 
             this.ToolStripMenuItem_ItemSetting_SetTargetAmount.Name = "ToolStripMenuItem_ItemSetting_SetTargetAmount";
-            this.ToolStripMenuItem_ItemSetting_SetTargetAmount.Size = new System.Drawing.Size(203, 28);
+            this.ToolStripMenuItem_ItemSetting_SetTargetAmount.Size = new System.Drawing.Size(216, 30);
             this.ToolStripMenuItem_ItemSetting_SetTargetAmount.Text = "目標金額の設定";
             this.ToolStripMenuItem_ItemSetting_SetTargetAmount.Click += new System.EventHandler(this.ToolStripMenuItem_ItemSetting_SetTargetAmount_Click);
             // 
             // ToolStripMenuItem_ItemSetting_SetName
             // 
             this.ToolStripMenuItem_ItemSetting_SetName.Name = "ToolStripMenuItem_ItemSetting_SetName";
-            this.ToolStripMenuItem_ItemSetting_SetName.Size = new System.Drawing.Size(203, 28);
+            this.ToolStripMenuItem_ItemSetting_SetName.Size = new System.Drawing.Size(216, 30);
             this.ToolStripMenuItem_ItemSetting_SetName.Text = "名前の変更";
             this.ToolStripMenuItem_ItemSetting_SetName.Click += new System.EventHandler(this.ToolStripMenuItem_ItemSetting_SetName_Click);
             // 
             // ToolStripMenuItem_ItemSetting_Remove
             // 
             this.ToolStripMenuItem_ItemSetting_Remove.Name = "ToolStripMenuItem_ItemSetting_Remove";
-            this.ToolStripMenuItem_ItemSetting_Remove.Size = new System.Drawing.Size(203, 28);
+            this.ToolStripMenuItem_ItemSetting_Remove.Size = new System.Drawing.Size(216, 30);
             this.ToolStripMenuItem_ItemSetting_Remove.Text = "削除";
             this.ToolStripMenuItem_ItemSetting_Remove.Click += new System.EventHandler(this.ToolStripMenuItem_ItemSetting_Remove_Click);
             // 
@@ -1034,12 +1035,12 @@
             this.contextMenuStrip_TotalAmountSetting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount});
             this.contextMenuStrip_TotalAmountSetting.Name = "contextMenuStrip_TotalAmountSetting";
-            this.contextMenuStrip_TotalAmountSetting.Size = new System.Drawing.Size(204, 32);
+            this.contextMenuStrip_TotalAmountSetting.Size = new System.Drawing.Size(217, 34);
             // 
             // ToolStripMenuItem_TotalAmountSetting_SetTargetAmount
             // 
             this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount.Name = "ToolStripMenuItem_TotalAmountSetting_SetTargetAmount";
-            this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount.Size = new System.Drawing.Size(203, 28);
+            this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount.Size = new System.Drawing.Size(216, 30);
             this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount.Text = "目標金額の設定";
             this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount.Click += new System.EventHandler(this.ToolStripMenuItem_TotalAmountSetting_SetTargetAmount_Click);
             // 
